@@ -23,7 +23,14 @@ const append = (message,position) => {
     messageContainer.append(messageElement)
 }
 
-const name = prompt('Enter name to join')
+let name = null;
+
+// while(!name){
+//     name = prompt('Enter name to join')
+// }
+
+name = prompt('Enter name to join')
+
 socket.emit('new-user-joined',name)
 socket.on('user-joined', name => {
     append(`${name} joined chat`,'right')

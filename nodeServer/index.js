@@ -14,7 +14,7 @@ io.on('connection', socket => {
         // user[socket.id] = name;
         console.log(name)
         // emmits everyone except user name
-        socket.broadcast.emit('user-joined');
+        socket.broadcast.emit('user-joined',name);
     });
 
     socket.on('send', message => {
