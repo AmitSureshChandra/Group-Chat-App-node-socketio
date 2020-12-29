@@ -16,7 +16,6 @@ io.on('connection', socket => {
         if(users[socket.id]){
             socket.broadcast.emit('user-joined',name);
         }
-        socket.broadcast.emit('user-joined',name);
     });
 
     // on user send message broadcast to all
@@ -27,7 +26,7 @@ io.on('connection', socket => {
     });
 
     // on user leave => broadcast it to all people
-    socket.on('disconnect', message => {
+    socket.on('disconnect', (message) => {
         if(users[socket.id]){
             socket.broadcast.emit('leave',users[socket.id]);
         }      
