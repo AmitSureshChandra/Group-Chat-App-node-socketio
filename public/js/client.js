@@ -1,4 +1,4 @@
-const socket = io('http://localhost:8000');
+const socket = io('http://localhost:5000');
 
 const form = document.getElementById('send-container')
 
@@ -6,6 +6,8 @@ const messageInput = document.getElementById('messageInp')
 const messageContainer = document.querySelector('.container')
 
 var audio = new Audio('media/chat.mp3')
+
+// var player = require('play-sound')(opts = {})
 
 // append msg to container
 const append = (message,position) => {
@@ -15,7 +17,13 @@ const append = (message,position) => {
     messageElement.classList.add(position)
     messageContainer.append(messageElement)
     if(position === 'left'){
+
         audio.play()
+        
+        // player.play('media/chat.mp3', function (err) {
+        //     if (err) throw err;
+        //     console.log("Audio finished");
+        //  });
     }
 }
 

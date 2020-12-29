@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi Chat App Node + Socket.io</title>
     <!-- use of defer : script is run after loading DOM  -->
-    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script defer src="js/client.js"></script>
-    <link rel="stylesheet" href="./style/myStyle.css">
+    
+    <link rel="stylesheet" href="http://localhost:5000/style/myStyle.css">
 </head>
+
 <body>
     <nav class="margin : 10px">
-        <img src="/img/chat.png" class="logo" alt="Chat Logo">
+        <img src="https://www.logolynx.com/images/logolynx/19/197a774c615c3292a87b9309117db811.png" class="logo" alt="Chat Logo">
         <h1>
             Welcome To We-Group chat window
         </h1>
@@ -33,5 +33,7 @@
             <button class="btn" type="submit">Send</button>
         </form>
     </div>
+    <script defer src="http://localhost:5000/socket.io/socket.io.js"></script>
+    <script defer src="http://localhost:5000/js/client.js"></script>
 </body>
 </html>
