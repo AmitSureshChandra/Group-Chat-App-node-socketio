@@ -1,6 +1,6 @@
 const io = require('socket.io')(5000,{
     cors: {
-      origin: "http://localhost:8081",
+      origin: process.env.SERVER_ADDRESS,
       methods: ["GET", "POST"]
     }
 })
