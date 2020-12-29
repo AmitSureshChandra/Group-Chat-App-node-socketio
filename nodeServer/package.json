@@ -4,8 +4,12 @@
   "description": "Multi chat server",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index"
+    "dev": "nodemon index"
   },
   "author": "Amit",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.6",
+    "socket.io": "^3.0.4"
+  }
 }
