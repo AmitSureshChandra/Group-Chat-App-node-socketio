@@ -10,14 +10,29 @@ const io = require('socket.io')(8000,{
 const users = {};
 
 io.on('connection', socket => {
+    
+    // on new user join => broadcast it to all people
     socket.on('new-user-joined', name => {
-        // user[socket.id] = name;
-        console.log(name)
+        users[socket.id] = name;
         // emmits everyone except user name
+        if(users[socket.id]){
+            socket.broadcast.emit('user-joined',name);
+        }
         socket.broadcast.emit('user-joined',name);
     });
 
+    // on user send message broadcast to all
     socket.on('send', message => {
-        socket.broadcast.emit('receive',{message : message, name : user[socket.id]});
+        if(users[socket.id]){
+            socket.broadcast.emit('receive',{message : message, name : users[socket.id]});
+        }
+    });
+
+    // on user leave => broadcast it to all people
+    socket.on('disconnect', message => {
+        if(users[socket.id]){
+            socket.broadcast.emit('leave',users[socket.id]);
+        }      
+        delete users[socket.id]
     });
 })

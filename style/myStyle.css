@@ -5,46 +5,64 @@
     margin-bottom: 20px;
 }
 
+nav>h1{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+}
+
 body{
     background-image: linear-gradient(rgb(238, 235, 231),rgb(190, 154, 113));
-    height: 100vh;
+    padding: 20px;
+    height: 100%;
 }
 
 .container{
     max-width : 900px;
-    width: 90%;
-    padding: 33px;
+    /* width: 90%; */
+    /* padding: 33px; */
     overflow-y: auto;
+    padding-top: 20px;
     margin-bottom: 20px;
     border : 2px solid black;
     border-radius: 10px;
     margin: auto;
-    height: 70vh;
+    max-height: 700px;
+    height: 100vh;
+    max-width: 1200px;
 }
 
 .message{
-    background-color: grey;
-    width: 30%;
+    background-color: rgb(218, 218, 218);
+    width: 40%;
     padding : 10px;
     margin : 10px;
-   
-    color: white;
+    color: rgb(53, 44, 173);
+    border : 2px solid black;
+    border-radius: 10px;
+
 }
 
 .left{
     float: left;
     clear: both;
+    margin-left : 30px;
 }
 
 .right{
     float: right;
     clear: both;
+    margin-right : 30px;
 }
 
 #send-container{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     text-align: center;
+    max-width: 1000px;
 }
 
 #messageInp{
@@ -60,5 +78,6 @@ body{
     cursor : pointer;
     border: 2px solid black;
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
+    width: 90px;
 }
