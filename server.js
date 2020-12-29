@@ -2,7 +2,8 @@ const io = require('socket.io')(5000,{
     cors: {
     //   origin: process.env.SERVER_ADDRESS,
       origin: 'https://we-group-chat.netlify.app',
-      methods: ["GET", "POST"]
+      methods: ["GET", "POST"],
+      allowedHeaders: ["Access-Control-Allow-Origin"],
     }
 })
 
